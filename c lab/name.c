@@ -1,0 +1,12 @@
+#include<stdio.h>
+	main(){
+		printf("\n*************************");
+		printf("\n*\t\t\t*");
+		printf("\n*\t\t\t*");
+		printf("\n*\t\t\t*");
+		printf("\n*\tJagdish\t\t*");
+		printf("\n*\t\t\t*");
+		printf("\n*\t\t\t*");
+		printf("\n*\t\t\t*");
+		printf("\n*************************");
+	}
