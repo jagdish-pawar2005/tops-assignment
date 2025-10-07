@@ -7,7 +7,7 @@ class Product{
 		float price;
 		
 		void getProduct(){
-			cout<<"\n Enter pid pname price";
+			cout<<"\n  pid pname price";
 			cin>>pid>>pname>>price;
 		}
 		void showProduct(){
