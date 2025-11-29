@@ -18,7 +18,7 @@ int isArmstrong(int n) {
 void printArmstrongSeries() {
     int i;
     printf("Armstrong numbers between 1 and 1000 are:\n");
-    for(i = 1; i <= 1000; i++) {
+    for(i = 10; i <= 1000; i++) {
         if(isArmstrong(i))
             printf("%d ", i);
     }
