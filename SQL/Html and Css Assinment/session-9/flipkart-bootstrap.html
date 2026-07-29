@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Flipkart Grid</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light py-5">
+    <!-- TASK 1: Container with a row, displaying three product cards side-by-side -->
+    <div class="container">
+        <h2 class="mb-4 text-dark fw-bold">Flipkart Deals of the Day</h2>
+        
+        <div class="row g-4">
+            <!-- Card 1 (col-md-4 ensures 3 side-by-side columns on medium & larger displays) -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="bg-secondary bg-opacity-10 text-center py-5 rounded-top">
+                        <span class="text-muted fs-5">Headphones</span>
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title text-dark">Sony WH-1000XM4</h5>
+                            <p class="card-text text-muted small">Industry-leading Active Noise Cancellation headphones with touch controls.</p>
+                        </div>
+                        <div class="mt-3">
+                            <span class="fs-5 fw-bold">₹19,990</span>
+                            <button class="btn btn-warning btn-sm w-100 mt-2 fw-semibold text-white">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="bg-secondary bg-opacity-10 text-center py-5 rounded-top">
+                        <span class="text-muted fs-5">Smart Watch</span>
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title text-dark">Apple Watch SE</h5>
+                            <p class="card-text text-muted small">Track your daily activity, heart rate, and workouts with ease.</p>
+                        </div>
+                        <div class="mt-3">
+                            <span class="fs-5 fw-bold">₹24,900</span>
+                            <button class="btn btn-warning btn-sm w-100 mt-2 fw-semibold text-white">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="bg-secondary bg-opacity-10 text-center py-5 rounded-top">
+                        <span class="text-muted fs-5">Speaker</span>
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title text-dark">JBL Flip 6</h5>
+                            <p class="card-text text-muted small">Portable waterproof Bluetooth speaker with deep bass.</p>
+                        </div>
+                        <div class="mt-3">
+                            <span class="fs-5 fw-bold">₹8,999</span>
+                            <button class="btn btn-warning btn-sm w-100 mt-2 fw-semibold text-white">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

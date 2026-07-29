@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Layout (Row/Column)</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 
+          TASK 2: Product Card Layout 
+          Default (Desktop/Tablet): Horizontal Row (side by side)
+        */
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #e0e0e0;
+            max-width: 650px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            
+            display: flex;
+            flex-direction: row; /* Horizontal Side by Side layout */
+            gap: 20px;
+        }
+
+        .img-container {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #f7f9fa;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #878787;
+        }
+
+        .details-container {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            color: #212121;
+        }
+
+        .price-row {
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .buy-btn {
+            background-color: #ff9f00;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* 
+          TASK 2: Media Query for screen width 600px or less. 
+          Switches card layout from horizontal to vertical.
+        */
+        @media only screen and (max-width: 600px) {
+            .product-card {
+                flex-direction: column; /* Stacks image on top, details below */
+            }
+            .img-container {
+                min-width: unset;
+                width: 100%;
+            }
+            .img-placeholder {
+                height: 180px;
+            }
+            .details-container {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <div class="img-container">
+            <div class="img-placeholder">Product Image</div>
+        </div>
+        <div class="details-container">
+            <div>
+                <h2>boAt Rockerz 450 Wireless Headphone</h2>
+                <p style="font-size: 13px; color: #878787; margin: 0;">Comfortable Ear Cushions, Up to 15 Hours Playback, Bluetooth V5.0</p>
+            </div>
+            <div>
+                <div class="price-row">
+                    <span class="price">₹1,499</span>
+                </div>
+                <button class="buy-btn">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

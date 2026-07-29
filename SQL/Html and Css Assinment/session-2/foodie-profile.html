@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Foodie Profile</title>
+    <style>
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background: #09090b;
+            color: #f4f4f5;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            color: #f43f5e;
+            font-size: 32px;
+            border-bottom: 2px solid #27272a;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #fb7185;
+            font-size: 22px;
+            margin-top: 30px;
+        }
+        p {
+            color: #a1a1aa;
+        }
+        ul, ol {
+            padding-left: 20px;
+            color: #d4d4d8;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .dish-link {
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #f43f5e;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .dish-link:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+        }
+        .dish-img {
+            display: block;
+            max-width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .caption {
+            font-size: 14px;
+            color: #71717a;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #27272a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f43f5e;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) td {
+            background-color: #1f1f23;
+        }
+        tr:hover td {
+            background-color: #3f3f46;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Foodie Profile</h1>
+        
+        <section class="intro">
+            <h2>Welcome, Fellow Food Lover!</h2>
+            <p>Hi, I'm a culinary explorer seeking out the best tastes around the globe. My absolute favorite cuisine is <strong>Italian</strong>, with its perfect balance of fresh herbs, rich tomatoes, and high-quality olive oil.</p>
+            <p><strong>My Best Meal Story:</strong> It was a chilly evening in Rome, tucked away in a small family-run trattoria. I ordered their signature <em>Cacio e Pepe</em>. Served straight out of a pecorino cheese wheel, the fresh pasta was creamy, peppery, and completely changed my understanding of simple Italian cooking.</p>
+        </section>
+
+        <section class="dishes">
+            <h2>Top 5 Favorite Dishes (Zomato Style)</h2>
+            <ul>
+                <li>Neapolitan Pizza (Margherita with fresh buffalo mozzarella)</li>
+                <li>Sushi (Spicy Bluefin Tuna Roll)</li>
+                <li>Butter Chicken with Garlic Naan</li>
+                <li>Ramen (Rich Shoyu broth with Chashu pork)</li>
+                <li>Cremoso Tiramisu</li>
+            </ul>
+        </section>
+
+        <section class="restaurants">
+            <h2>Restaurants I Want to Try Next</h2>
+            <ol>
+                <li><strong>Osteria Francescana</strong> (Modena, Italy) - Experiencing Massimo Bottura's avant-garde creations.</li>
+                <li><strong>Gaggan Anand</strong> (Bangkok, Thailand) - Innovative progressive Indian cuisine.</li>
+                <li><strong>Sukiyabashi Jiro</strong> (Tokyo, Japan) - World-renowned masterclass sushi.</li>
+            </ol>
+        </section>
+
+        <section class="featured-dish">
+            <h2>Featured Favorite: Authentic Neapolitan Pizza</h2>
+            <a href="https://www.pizzanapoletana.org/en/" target="_blank" class="dish-link" title="Click to visit the Association Verace Pizza Napoletana website">
+                <img class="dish-img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Delicious Neapolitan Pizza">
+            </a>
+            <div class="caption">Click the image above to visit the official Neapolitan Pizza Association website.</div>
+        </section>
+
+        <section class="comparison">
+            <h2>Food Delivery Apps Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>App Name</th>
+                        <th>Delivery Charges</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Zomato</td>
+                        <td>₹40 (Free with Zomato Gold)</td>
+                        <td>4.6 / 5</td>
+                    </tr>
+                    <tr>
+                        <td>Swiggy</td>
+                        <td>₹45 (Free with Swiggy One)</td>
+                        <td>4.5 / 5</td>
+                    </tr>
+                    <tr>
+                        <td>Uber Eats</td>
+                        <td>$3.99 (Free with Uber One)</td>
+                        <td>4.2 / 5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

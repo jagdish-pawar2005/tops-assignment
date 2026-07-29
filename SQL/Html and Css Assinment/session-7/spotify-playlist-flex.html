@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Flexbox Playlist Bar</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .playlist-bar-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1db954;
+        }
+
+        /* TASK 2: Horizontal playlist bar using Flexbox */
+        .playlist-flex-bar {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto; /* Allow horizontal scrolling on smaller viewports */
+            padding-bottom: 10px;
+        }
+
+        /* Playlist Song Card */
+        .song-card {
+            background-color: #181818;
+            border-radius: 8px;
+            padding: 16px;
+            min-width: 160px;
+            flex: 1;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+            border: 1px solid #282828;
+            
+            /* Inner Flexbox: Stack image and content vertically */
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .song-card:hover {
+            background-color: #282828;
+        }
+
+        .album-art {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        /* Song detail section: Vertically centered texts inside card details using flex & align-items */
+        .song-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 60px; /* Constrained height to show centering */
+            
+            /* TASK 2: Vertically center text contents */
+            align-items: center; 
+            text-align: center;
+        }
+
+        .song-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 4px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .artist {
+            font-size: 12px;
+            color: #b3b3b3;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="playlist-bar-container">
+        <h2>Spotify Flexbox Playlist Bar</h2>
+        
+        <div class="playlist-flex-bar">
+            <!-- Card 1 -->
+            <div class="song-card">
+                <img class="album-art" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=200&q=80" alt="Album Art">
+                <div class="song-details">
+                    <p class="song-name">Summer Vibes</p>
+                    <p class="artist">Solarity</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="song-card">
+                <img class="album-art" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80" alt="Album Art">
+                <div class="song-details">
+                    <p class="song-name">Lofi Midnight</p>
+                    <p class="artist">Acoustics</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="song-card">
+                <img class="album-art" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=200&q=80" alt="Album Art">
+                <div class="song-details">
+                    <p class="song-name">Cyber Rave</p>
+                    <p class="artist">Tokyo Drift</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="song-card">
+                <img class="album-art" src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=200&q=80" alt="Album Art">
+                <div class="song-details">
+                    <p class="song-name">Jazz Mornings</p>
+                    <p class="artist">The Trio</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="song-card">
+                <img class="album-art" src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=200&q=80" alt="Album Art">
+                <div class="song-details">
+                    <p class="song-name">Rock Legend</p>
+                    <p class="artist">The Dynamos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

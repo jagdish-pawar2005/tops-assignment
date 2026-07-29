@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactored Spacing Utilities (Box Model)</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f3f3;
+            margin: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 
+          TASK 5: REFACTORED SPACING UTILITY CLASSES 
+          By defining standardized padding and margin utilities, we avoid writing custom margin 
+          and padding values inside specific card or text selectors.
+        */
+        .p-16 { padding: 16px !important; }
+        .p-8 { padding: 8px !important; }
+        .m-20 { margin: 20px !important; }
+        .mb-12 { margin-bottom: 12px !important; }
+        .pb-12 { padding-bottom: 12px !important; }
+        .mt-0 { margin-top: 0 !important; }
+        .mb-4 { margin-bottom: 4px !important; }
+        
+        /* Core visual rules only - completely independent of margins/paddings */
+        .card {
+            background-color: #ffffff;
+            width: 320px;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+        
+        .image-placeholder {
+            background-color: #e23744;
+            height: 150px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .info-section {
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        .restaurant-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1c1c1c;
+        }
+
+        .cuisine {
+            font-size: 14px;
+            color: #696969;
+        }
+
+        .rating-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rating-badge {
+            background-color: #24963f;
+            color: white;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .cost {
+            font-size: 13px;
+            color: #696969;
+        }
+
+        /*
+          MAINTAINABILITY EXPLANATION:
+          1. Reduces CSS Code Duplication: Instead of specifying `margin-bottom: 12px` multiple times across different element classes,
+             we define `.mb-12` once and reuse it in the HTML markup.
+          2. Standardizes Design Tokens: Consistent padding/margins make the design look unified (e.g. alignment grids).
+          3. Fast Design Changes: If the design system changes and spacing needs to be reduced, we modify it in one place (e.g., update .p-16 to padding: 12px) 
+             without scanning every CSS selector rule.
+        */
+    </style>
+</head>
+<body>
+    <!-- Zomato Card utilizing refactored spacing utility classes -->
+    <div class="card p-16 m-20">
+        <div class="image-placeholder mb-12">Delicious Italian</div>
+        
+        <div class="info-section pb-12 mb-12">
+            <h2 class="restaurant-name mt-0 mb-4">La Dolce Vita</h2>
+            <p class="cuisine">Italian, Pizza, Dessert</p>
+        </div>
+        
+        <div class="rating-section">
+            <span class="rating-badge p-8">4.5 ★</span>
+            <span class="cost">₹400 for two</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Session 1: Task 4 - DOM Structure of myprofile.html
+
+Below is the DOM tree structure representing the parent-child relationships of elements in myprofile.html (at least 3 levels):
+
+html (Level 1)
+ ├── head
+ │    ├── charset (meta)
+ │    ├── viewport (meta)
+ │    ├── title
+ │    └── style
+ └── body (Level 2)
+      └── div.profile-card (Level 3)
+           ├── img.profile-img (Level 4)
+           ├── h1#profile-name (Level 4)
+           └── p (Level 4)
+
+Relationships:
+- html is the root parent element.
+- body is a direct child of html.
+- div.profile-card is a direct child of body and a grandchild of html.
+- img, h1, and p are siblings to each other, children of div.profile-card, and descendants of body/html.

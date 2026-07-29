@@ -1,0 +1,25 @@
+/* Stylesheet for Session 5 Task 3 - Zomato Inspired Buttons */
+
+button {
+    background-color: #cb202d; /* Zomato Brand Red Color */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.1s ease;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(203, 32, 45, 0.15);
+}
+
+button:hover {
+    background-color: #ef4f5f; /* Lighter red color on hover */
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px);
+}

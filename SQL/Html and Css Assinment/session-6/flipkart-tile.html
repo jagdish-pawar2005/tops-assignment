@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Display Properties Tile</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .tile {
+            background-color: white;
+            border-radius: 8px;
+            width: 250px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e0e0e0;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 180px;
+            background-color: #f7f9fa;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #878787;
+        }
+
+        /* TASK 2: Using different display properties */
+        
+        /* block display ensures name starts on a new line and takes full width */
+        .product-name {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            color: #212121;
+            margin: 0 0 8px 0;
+            text-decoration: none;
+        }
+
+        /* inline-block display allows placing the price inline but still controls dimensions */
+        .price {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            color: #212121;
+            background-color: #f0fdf4;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* display: none hides elements from DOM tree layout */
+        .hide-price {
+            display: none !important;
+        }
+
+        .control-btn {
+            background-color: #2874f0;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="control-btn" onclick="togglePrice()">Toggle Hide Price Class</button>
+
+    <div class="tile">
+        <div class="img-box">Smart Watch Image</div>
+        
+        <!-- block display -->
+        <a href="#" class="product-name">Noise ColorFit Pulse Smartwatch</a>
+        
+        <!-- inline-block display that gets hidden on class toggle -->
+        <div class="price" id="priceTag">₹1,999</div>
+    </div>
+
+    <script>
+        function togglePrice() {
+            const priceTag = document.getElementById('priceTag');
+            // Toggle the 'hide-price' class
+            priceTag.classList.toggle('hide-price');
+        }
+    </script>
+</body>
+</html>

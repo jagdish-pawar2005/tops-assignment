@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow Poster Grid</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: #f84464;
+        }
+
+        .poster-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* TASK 4: Relative Position Parent */
+        .poster-card {
+            position: relative; /* Anchor for absolute child elements */
+            width: 200px;
+            background-color: #151c2c;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid #1e293b;
+        }
+
+        .poster-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* TASK 4: Absolute Position Child overlaying parent */
+        .badge-new {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: #f84464; /* BookMyShow Red Accent */
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(248, 68, 100, 0.4);
+            z-index: 10;
+        }
+
+        .card-details {
+            padding: 12px;
+        }
+
+        .movie-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            font-size: 12px;
+            color: #94a3b8;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Recommended Movies</h2>
+        
+        <div class="poster-grid">
+            <!-- Movie Poster Card with 'NEW' Absolute Overlay -->
+            <div class="poster-card">
+                <span class="badge-new">New</span> <!-- Absolute positioned overlay -->
+                <img class="poster-img" src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=300&q=80" alt="Movie 1">
+                <div class="card-details">
+                    <h3 class="movie-title">The Cosmos Chronicles</h3>
+                    <p class="movie-meta">Sci-Fi/Adventure</p>
+                </div>
+            </div>
+
+            <!-- Standard Movie Poster Card -->
+            <div class="poster-card">
+                <img class="poster-img" src="https://images.unsplash.com/photo-1478720143022-9099477e637a?auto=format&fit=crop&w=300&q=80" alt="Movie 2">
+                <div class="card-details">
+                    <h3 class="movie-title">Noir Shadows</h3>
+                    <p class="movie-meta">Drama/Thriller</p>
+                </div>
+            </div>
+
+            <!-- Standard Movie Poster Card -->
+            <div class="poster-card">
+                <img class="poster-img" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=300&q=80" alt="Movie 3">
+                <div class="card-details">
+                    <h3 class="movie-title">Cinema Paradiso</h3>
+                    <p class="movie-meta">Romance/Classic</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

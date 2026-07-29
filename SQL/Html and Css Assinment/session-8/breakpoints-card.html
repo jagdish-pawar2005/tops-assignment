@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Breakpoint Product Card</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            gap: 20px;
+        }
+
+        /* 
+          TASK 3: Multi-Breakpoint Product Card Layout
+          DEFAULT STYLES (Ultra-wide screens > 1200px)
+        */
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border: 1px solid #e0e0e0;
+            width: 100%;
+            max-width: 600px;
+            
+            /* Default Large Screen Spacing */
+            padding: 35px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            /* Default Large Title Font Size */
+            font-size: 26px;
+            margin: 0 0 12px 0;
+            color: #212121;
+        }
+
+        p.description {
+            /* Default Large Description Font Size */
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .buy-btn {
+            background-color: #fb641b;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        /* Breakpoint Indicator Utility */
+        .breakpoint-indicator::after {
+            content: "Desktop (>1200px) - Padding: 35px, Title: 26px";
+            background-color: #10b981;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ----------------------------------------------------
+           TASK 3: Breakpoint 1 - max-width: 1200px 
+           (Applies to small laptops and large tablets)
+           ---------------------------------------------------- */
+        @media only screen and (max-width: 1200px) {
+            .product-card {
+                padding: 28px; /* Reduced Padding */
+            }
+            h2 {
+                font-size: 22px; /* Reduced Font Size */
+            }
+            p.description {
+                font-size: 14px; /* Reduced Description Font Size */
+            }
+            .price {
+                font-size: 22px;
+            }
+            .buy-btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+            .breakpoint-indicator::after {
+                content: "Laptop/Large Tablet (900px - 1200px) - Padding: 28px, Title: 22px";
+                background-color: #3b82f6;
+            }
+        }
+
+        /* ----------------------------------------------------
+           TASK 3: Breakpoint 2 - max-width: 900px 
+           (Applies to tablets)
+           ---------------------------------------------------- */
+        @media only screen and (max-width: 900px) {
+            .product-card {
+                padding: 22px; /* Further Reduced Padding */
+            }
+            h2 {
+                font-size: 19px; /* Further Reduced Font Size */
+            }
+            p.description {
+                font-size: 13px;
+            }
+            .price {
+                font-size: 20px;
+            }
+            .buy-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+            .breakpoint-indicator::after {
+                content: "Medium Tablet (600px - 900px) - Padding: 22px, Title: 19px";
+                background-color: #f59e0b;
+            }
+        }
+
+        /* ----------------------------------------------------
+           TASK 3: Breakpoint 3 - max-width: 600px 
+           (Applies to mobile phones)
+           ---------------------------------------------------- */
+        @media only screen and (max-width: 600px) {
+            .product-card {
+                padding: 15px; /* Minimal Padding */
+            }
+            h2 {
+                font-size: 16px; /* Compact Font Size */
+            }
+            p.description {
+                font-size: 12px;
+            }
+            .price {
+                font-size: 18px;
+            }
+            .buy-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+                width: 100%; /* Make button block level on mobile */
+            }
+            .breakpoint-indicator::after {
+                content: "Mobile Phone (<600px) - Padding: 15px, Title: 16px";
+                background-color: #ef4444;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Breakpoint Status Badge -->
+    <div class="breakpoint-indicator"></div>
+
+    <div class="product-card">
+        <h2>boAt Rockerz 450 Wireless Headphone</h2>
+        <p class="description">Immerse yourself in active high-fidelity acoustics. The boAt Rockerz 450 comes with comfortable earmuffs, up to 15 hours of battery life, and high-performance Bluetooth 5.0 connectivity.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span class="price">₹1,499</span>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+    </div>
+</body>
+</html>

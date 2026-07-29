@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Profile & Bio Links</title>
+    <!-- Bootstrap Icons for input field icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Main Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bio-wrapper">
+        
+        <!-- SECTION 1: Gamer Tag Bio Link Page -->
+        <div class="glass-panel profile-section">
+            <div class="avatar-wrapper">
+                <img class="avatar" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80" alt="Gamer Avatar">
+                <span class="online-indicator"></span>
+            </div>
+            
+            <h1 class="alias">ViperX_99</h1>
+            <p class="tagline">Apex Legends Predator | Competitive FPS Player | Sound Design Enthusiast. Catch my streams below!</p>
+            
+            <!-- Gamer Profile Social Links -->
+            <div class="gamer-links">
+                <a href="https://twitch.tv" target="_blank" class="gamer-btn twitch">
+                    <i class="bi bi-twitch"></i> Twitch
+                </a>
+                <a href="https://discord.com" target="_blank" class="gamer-btn discord">
+                    <i class="bi bi-discord"></i> Discord
+                </a>
+                <a href="https://store.steampowered.com" target="_blank" class="gamer-btn steam">
+                    <i class="bi bi-steam"></i> Steam
+                </a>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Form for adding Spotify, YT Music, Apple Music Links -->
+        <div class="glass-panel">
+            <h2 class="form-title">Link Your Music Profiles</h2>
+            
+            <!-- TASK 1: HTML form called musicLinksForm -->
+            <form id="musicLinksForm">
+                
+                <!-- Spotify Link Input with Icon Inside -->
+                <!-- TASK 3: Icon inside the input box (using relative wrapper and padding-left) -->
+                <div class="input-wrapper">
+                    <i class="bi bi-spotify input-icon spotify"></i>
+                    <input type="url" id="spotifyUrl" class="platform-input" placeholder="Spotify Profile URL (e.g., https://open.spotify.com/user/viper)" required>
+                </div>
+                
+                <!-- YouTube Music Link Input with Icon Inside -->
+                <div class="input-wrapper">
+                    <i class="bi bi-youtube input-icon youtube"></i>
+                    <input type="url" id="ytMusicUrl" class="platform-input" placeholder="YouTube Music URL (e.g., https://music.youtube.com/channel/viper)" required>
+                </div>
+                
+                <!-- Apple Music Link Input with Icon Inside -->
+                <div class="input-wrapper">
+                    <i class="bi bi-music-note input-icon apple"></i>
+                    <input type="url" id="appleMusicUrl" class="platform-input" placeholder="Apple Music URL (e.g., https://music.apple.com/profile/viper)" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Generate Preview Cards</button>
+            </form>
+        </div>
+
+        <!-- SECTION 3: Dynamic Preview Cards Container -->
+        <!-- TASK 4: Preview cards showing platform logo, handle, and Visit button opening in new tab -->
+        <div class="glass-panel d-none" id="previewPanel">
+            <h3 class="preview-header">Shared Soundtracks</h3>
+            <div class="preview-grid" id="previewGrid">
+                <!-- Javascript will inject styled preview cards here -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript to parse form submission and generate visually distinct cards -->
+    <script>
+        const form = document.getElementById('musicLinksForm');
+        const previewPanel = document.getElementById('previewPanel');
+        const previewGrid = document.getElementById('previewGrid');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Stop default form reload behavior
+            
+            // Gather input values
+            const spotifyUrl = document.getElementById('spotifyUrl').value;
+            const ytMusicUrl = document.getElementById('ytMusicUrl').value;
+            const appleMusicUrl = document.getElementById('appleMusicUrl').value;
+            
+            // Clear previous cards
+            previewGrid.innerHTML = '';
+            
+            // Helper function to extract user handle/channel from URL
+            function extractHandle(urlStr, platform) {
+                try {
+                    const url = new URL(urlStr);
+                    const pathSegments = url.pathname.split('/').filter(s => s.length > 0);
+                    
+                    if (pathSegments.length > 0) {
+                        // E.g., open.spotify.com/user/john -> segments: ['user', 'john']
+                        if (platform === 'spotify' && pathSegments[0] === 'user' && pathSegments[1]) {
+                            return `@${pathSegments[1]}`;
+                        }
+                        // E.g., music.youtube.com/channel/UC123 -> segments: ['channel', 'UC123']
+                        if (platform === 'youtube' && pathSegments[0] === 'channel' && pathSegments[1]) {
+                            return `@${pathSegments[1].slice(0, 8)}...`;
+                        }
+                        // E.g., music.apple.com/profile/john -> segments: ['profile', 'john']
+                        if (platform === 'apple' && pathSegments[0] === 'profile' && pathSegments[1]) {
+                            return `@${pathSegments[1]}`;
+                        }
+                        
+                        // Default fallback to last path segment
+                        return `@${pathSegments[pathSegments.length - 1]}`;
+                    }
+                    return '@profile';
+                } catch (e) {
+                    return '@profile';
+                }
+            }
+
+            const platforms = [
+                {
+                    key: 'spotify',
+                    name: 'Spotify',
+                    logo: 'bi bi-spotify',
+                    url: spotifyUrl,
+                    handle: extractHandle(spotifyUrl, 'spotify')
+                },
+                {
+                    key: 'youtube',
+                    name: 'YouTube Music',
+                    logo: 'bi-youtube',
+                    url: ytMusicUrl,
+                    handle: extractHandle(ytMusicUrl, 'youtube')
+                },
+                {
+                    key: 'apple',
+                    name: 'Apple Music',
+                    logo: 'bi bi-music-note',
+                    url: appleMusicUrl,
+                    handle: extractHandle(appleMusicUrl, 'apple')
+                }
+            ];
+
+            // Render Preview Cards dynamically
+            platforms.forEach(p => {
+                const card = document.createElement('div');
+                card.className = `preview-card ${p.key}`; // Adds specific class for distinct styling
+                
+                card.innerHTML = `
+                    <div class="preview-left">
+                        <i class="${p.logo} preview-logo ${p.key}"></i>
+                        <div class="preview-meta">
+                            <span class="preview-platform ${p.key}">${p.name}</span>
+                            <span class="preview-handle">${p.handle}</span>
+                        </div>
+                    </div>
+                    <!-- opens target in new tab -->
+                    <a href="${p.url}" target="_blank" class="visit-btn">Visit</a>
+                `;
+                
+                previewGrid.appendChild(card);
+            });
+
+            // Show panel
+            previewPanel.classList.remove('d-none');
+            
+            // Smooth scroll to preview panel
+            previewPanel.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

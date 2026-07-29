@@ -1,0 +1,11 @@
+Session 1: Task 3 - Chrome DevTools Style Customization Instructions
+
+To change the background color of your name live in the browser using DevTools:
+
+1. Open `session-1/myprofile.html` in your Google Chrome browser.
+2. Right-click on the name "Alex Mercer" and select "Inspect" to open Chrome DevTools.
+3. In the Elements panel, ensure that `<h1 id="profile-name">Alex Mercer</h1>` is highlighted.
+4. On the right-hand side, look at the "Styles" tab under the "element.style" section (the top-most block).
+5. Click inside the brackets of `element.style { ... }` and type:
+   `background-color: #ffd700;` (or any color like coral, lightblue, etc.)
+6. Press Enter. You will immediately see the name's background color update in the browser window without modifying the source html file on disk.

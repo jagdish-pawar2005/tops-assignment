@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Product Review Form</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .review-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #e0e0e0;
+        }
+        .header {
+            background-color: #2874f0;
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        form {
+            padding: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #212121;
+            font-size: 14px;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c2c2c2;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2874f0;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .hint {
+            font-size: 12px;
+            color: #878787;
+            margin-top: 4px;
+        }
+        .submit-btn {
+            background-color: #fb641b;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #f0540e;
+        }
+        .dev-info {
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+            padding: 15px 25px;
+            border-radius: 0 0 8px 8px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-card">
+        <div class="header">
+            <h2>Write a Product Review</h2>
+            <p>Share your honest experience to help other buyers</p>
+        </div>
+        
+        <!-- Form submission targeting same page or custom script using POST -->
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="username">Username / Reviewer Name</label>
+                <input type="text" id="username" name="username" placeholder="e.g., Rohan Kumar" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="rating">Product Rating</label>
+                <select id="rating" name="rating" required>
+                    <option value="" disabled selected>Select Rating (1 to 5 Stars)</option>
+                    <option value="5">5 ★★★★★ (Excellent)</option>
+                    <option value="4">4 ★★★★☆ (Very Good)</option>
+                    <option value="3">3 ★★★☆☆ (Average)</option>
+                    <option value="2">2 ★★☆☆☆ (Below Average)</option>
+                    <option value="1">1 ★☆☆☆☆ (Poor)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="review">Your Review Description</label>
+                <textarea id="review" name="review" placeholder="What did you like or dislike? How is the product quality?" minlength="20" required></textarea>
+                <div class="hint">Minimum length: 20 characters</div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Review</button>
+        </form>
+        
+        <div class="dev-info">
+            <strong>Network Tab Testing Info:</strong><br>
+            To inspect the POST data: 
+            1. Open Chrome DevTools (F12) -> go to the <strong>Network</strong> tab. 
+            2. Fill and submit the form above. 
+            3. Look for the document request (usually named `product-review.html` or similar). 
+            4. Click it, navigate to the <strong>Payload</strong> (or <strong>Headers > Form Data</strong>) tab to inspect your submitted values.
+        </div>
+    </div>
+</body>
+</html>

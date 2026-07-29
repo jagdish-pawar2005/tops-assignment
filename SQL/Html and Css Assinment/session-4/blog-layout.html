@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Blog Post Layout</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #1e293b;
+            padding: 20px 40px;
+            border-bottom: 1px solid #334155;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #38bdf8;
+        }
+        nav {
+            background-color: #334155;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #f8fafc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #38bdf8;
+        }
+        main {
+            flex: 1;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        article {
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        article header h2 {
+            margin-top: 0;
+            color: #f8fafc;
+            font-size: 24px;
+        }
+        article .meta {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        article p {
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #1e293b;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code & Design Blog</h1>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#about">About</a>
+    </nav>
+    
+    <main>
+        <article>
+            <header>
+                <h2>The Power of Semantic HTML5</h2>
+                <div class="meta">Published on July 29, 2026 by <strong>Admin</strong> | 5 min read</div>
+            </header>
+            <section>
+                <p>Semantic HTML introduces tags that clearly define their content and purpose. Rather than using generic containers like <code>&lt;div&gt;</code> for everything, we use tags like <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;header&gt;</code>.</p>
+                <p>By using semantic elements, you provide meaningful layout information to browsers, search engine web crawlers, and assistive technologies. This significantly boosts SEO ranks, enhances accessibility for screen readers, and makes code bases far more readable and maintainable for developers.</p>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Code & Design Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

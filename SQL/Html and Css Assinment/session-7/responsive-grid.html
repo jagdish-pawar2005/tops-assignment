@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive CSS Grid Showcase</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #212121;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .description {
+            color: #878787;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* 
+          TASK 4: RESPONSIVE GRID LAYOUT 
+          Default Layout: 1 column for Mobile Screens (<600px)
+        */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 20px;
+        }
+
+        /* Tablet Breakpoint: 2 Columns for screen widths 600px and up */
+        @media only screen and (min-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Desktop Breakpoint: 3 Columns for screen widths 900px and up */
+        @media only screen and (min-width: 900px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: #f7f9fa;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #878787;
+            font-weight: 500;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #212121;
+            margin: 0 0 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .price-info {
+            font-size: 16px;
+            font-weight: 600;
+            color: #212121;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Responsive Deals Grid</h2>
+        <p class="description">Resize the browser window to see columns scale: 3 columns on Desktop (>900px), 2 columns on Tablet (600px - 900px), and 1 column on Mobile (<600px).</p>
+        
+        <div class="product-grid">
+            <!-- Card 1 -->
+            <div class="product-card">
+                <div class="image-placeholder">Redmi 12 5G</div>
+                <h3 class="title">Redmi 12 5G (Jade Black)</h3>
+                <div class="price-info">₹11,999</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <div class="image-placeholder">HP Pavilion</div>
+                <h3 class="title">HP Pavilion Intel Core i5</h3>
+                <div class="price-info">₹52,990</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <div class="image-placeholder">OnePlus Buds</div>
+                <h3 class="title">OnePlus Buds Z2 ANC</h3>
+                <div class="price-info">₹4,999</div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card">
+                <div class="image-placeholder">Adidas Shoes</div>
+                <h3 class="title">Adidas Running Men Sneakers</h3>
+                <div class="price-info">₹3,499</div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="product-card">
+                <div class="image-placeholder">Samsonite Suitcase</div>
+                <h3 class="title">Samsonite Carry-On Suitcase</h3>
+                <div class="price-info">₹8,990</div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="product-card">
+                <div class="image-placeholder">Philips Trimmer</div>
+                <h3 class="title">Philips Multi Grooming Kit</h3>
+                <div class="price-info">₹1,849</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

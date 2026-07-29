@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Playlist Selector styling</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .playlist-container {
+            max-width: 500px;
+            width: 100%;
+            background-color: #181818;
+            border-radius: 8px;
+            padding: 24px;
+        }
+        h2 {
+            font-size: 22px;
+            margin: 0 0 20px 0;
+            color: #1db954; /* Spotify Brand Green */
+        }
+        
+        /* TASK 4: Styling all elements with the class 'playlist-item' to have dark bg and white text */
+        .playlist-item {
+            background-color: #282828;
+            color: #b3b3b3;
+            border-radius: 4px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        .playlist-item:hover {
+            background-color: #383838;
+            color: #ffffff;
+        }
+        .song-title {
+            font-weight: 600;
+        }
+        .artist {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        .duration {
+            font-size: 14px;
+        }
+
+        /* TASK 4: Highlight currently playing song with a different color using a unique ID selector */
+        #currently-playing {
+            background-color: #1db954; /* Accent green highlighting active song */
+            color: #121212;
+            font-weight: 700;
+            box-shadow: 0 0 15px rgba(29, 185, 84, 0.3);
+        }
+        #currently-playing .artist {
+            color: #121212;
+            font-weight: 500;
+        }
+        #currently-playing:hover {
+            background-color: #1ed760;
+        }
+    </style>
+</head>
+<body>
+    <div class="playlist-container">
+        <h2>My Hot Hits</h2>
+        
+        <div class="playlist-item">
+            <div>
+                <div class="song-title">1. Blinding Lights</div>
+                <div class="artist">The Weeknd</div>
+            </div>
+            <div class="duration">3:20</div>
+        </div>
+        
+        <!-- Currently Playing Song with unique id selection -->
+        <div class="playlist-item" id="currently-playing">
+            <div>
+                <div class="song-title">2. Starboy (Playing Now)</div>
+                <div class="artist">The Weeknd ft. Daft Punk</div>
+            </div>
+            <div class="duration">3:50</div>
+        </div>
+        
+        <div class="playlist-item">
+            <div>
+                <div class="song-title">3. Save Your Tears</div>
+                <div class="artist">The Weeknd</div>
+            </div>
+            <div class="duration">3:35</div>
+        </div>
+        
+        <div class="playlist-item">
+            <div>
+                <div class="song-title">4. Die For You</div>
+                <div class="artist">The Weeknd</div>
+            </div>
+            <div class="duration">4:20</div>
+        </div>
+    </div>
+</body>
+</html>

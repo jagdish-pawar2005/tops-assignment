@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Food Filters homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light py-5">
+    <div class="container text-center" style="max-width: 600px;">
+        <h3 class="mb-4 fw-bold text-danger">Filters &amp; Categories</h3>
+        
+        <!-- TASK 5: Row of filter buttons with Zomato branding, highlighting selected filter using 'active' class -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="filterButtonGroup">
+            <button class="btn btn-outline-danger rounded-pill px-4 active" onclick="activateFilter(this)">All</button>
+            <button class="btn btn-outline-danger rounded-pill px-4" onclick="activateFilter(this)">Veg Only</button>
+            <button class="btn btn-outline-danger rounded-pill px-4" onclick="activateFilter(this)">Non-Veg</button>
+            <button class="btn btn-outline-danger rounded-pill px-4" onclick="activateFilter(this)">Desserts</button>
+            <button class="btn btn-outline-danger rounded-pill px-4" onclick="activateFilter(this)">Fast Food</button>
+        </div>
+
+        <p class="text-secondary small">Click a button to toggle the active highlight class.</p>
+    </div>
+
+    <!-- Active Class switcher JS -->
+    <script>
+        function activateFilter(element) {
+            // Find all buttons in the group container
+            const buttons = document.querySelectorAll('#filterButtonGroup .btn');
+            
+            // Remove 'active' class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add 'active' class to clicked button
+            element.classList.add('active');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

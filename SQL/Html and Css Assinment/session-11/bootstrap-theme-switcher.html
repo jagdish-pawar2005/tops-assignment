@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Utility Theme Switcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-secondary bg-opacity-10 py-5">
+    
+    <!-- TASK 5: Main container containing theme switcher -->
+    <div class="container py-5 px-4 bg-light text-dark rounded-4 shadow-sm border" id="themeContainer" style="max-width: 600px; transition: all 0.3s ease;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold m-0">Theme Toggle Page</h3>
+            <!-- Switch Button -->
+            <button class="btn btn-dark" id="themeSwitchBtn">Dark Mode</button>
+        </div>
+        
+        <div class="card border-0 bg-transparent">
+            <h5 class="fw-semibold">Bootstrap Classes at Play</h5>
+            <p class="leading-relaxed opacity-75">By utilizing Bootstrap color utilities, we can toggle the background color of this container using <code>bg-light</code> and <code>bg-dark</code>. Simultaneously, we toggle the text color using <code>text-dark</code> and <code>text-light</code> to ensure proper contrast and accessibility.</p>
+            <p class="opacity-75">Click the toggle button in the top right to check out the clean style transitions built solely with Bootstrap classes.</p>
+        </div>
+    </div>
+
+    <!-- Switch Theme JS script -->
+    <script>
+        const themeBtn = document.getElementById('themeSwitchBtn');
+        const container = document.getElementById('themeContainer');
+
+        themeBtn.addEventListener('click', () => {
+            // Toggle container classes
+            container.classList.toggle('bg-light');
+            container.classList.toggle('bg-dark');
+            container.classList.toggle('text-dark');
+            container.classList.toggle('text-light');
+            
+            // Update button visual state & text
+            if (container.classList.contains('bg-dark')) {
+                themeBtn.textContent = "Light Mode";
+                themeBtn.className = "btn btn-light";
+            } else {
+                themeBtn.textContent = "Dark Mode";
+                themeBtn.className = "btn btn-dark";
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

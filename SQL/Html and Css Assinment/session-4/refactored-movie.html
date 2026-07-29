@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactored Semantic Movie Review</title>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #111827;
+            color: #f3f4f6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        /* Style targeting semantic selectors */
+        article.movie-review {
+            background-color: #1f2937;
+            border-radius: 12px;
+            border: 1px solid #374151;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        header.review-header {
+            border-bottom: 1px solid #374151;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #f59e0b;
+        }
+        .meta-info {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        nav.genre-tags {
+            margin: 15px 0;
+        }
+        nav.genre-tags a {
+            background-color: #374151;
+            color: #fbbf24;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            margin-right: 8px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        nav.genre-tags a:hover {
+            background-color: #4b5563;
+        }
+        .review-body {
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+        footer.review-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #374151;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+        .rating {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!--
+      BEFORE REFACTORING (Non-Semantic Snippet):
+      <div class="movie-review">
+          <div class="title">Inception Review</div>
+          <span class="author">By John Doe</span> <span class="date">July 2026</span>
+          <div class="tags">
+              <span class="tag">Sci-Fi</span>
+              <span class="tag">Thriller</span>
+          </div>
+          <div class="content">
+              This movie is a masterpiece of storytelling and visual effects...
+          </div>
+          <div class="footer">
+              Rating: 9/10 | Recommended
+          </div>
+      </div>
+    -->
+
+    <div class="container">
+        <!-- AFTER REFACTORING: Semantic HTML5 Elements for SEO & Accessibility -->
+        <article class="movie-review">
+            <header class="review-header">
+                <h1>Inception Review</h1>
+                <div class="meta-info">
+                    Reviewed by <strong>John Doe</strong> on <time datetime="2026-07">July 2026</time>
+                </div>
+            </header>
+            
+            <nav class="genre-tags" aria-label="Movie Genres">
+                <a href="#scifi">Sci-Fi</a>
+                <a href="#thriller">Thriller</a>
+            </nav>
+            
+            <section class="review-body">
+                <p>This movie is a masterpiece of storytelling and visual effects. Christopher Nolan manages to intertwine dreams and reality in a way that keeps the audience on the edge of their seats from start to finish. The character development, combined with Hans Zimmer's hauntingly beautiful score, creates an unforgettable cinematic experience.</p>
+            </section>
+            
+            <footer class="review-footer">
+                <span class="rating">Rating: ★ 9/10</span>
+                <span>Verdict: Highly Recommended</span>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>

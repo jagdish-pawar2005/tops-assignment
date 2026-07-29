@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline CSS Product Card</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            width: 280px;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .product-img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 8px 0;
+            color: #212121;
+        }
+        .buy-btn {
+            background-color: #fb641b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="product-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80" alt="Running Shoe">
+        
+        <!-- TASK 1: Applied inline CSS directly to the product title to set unique background-color and font-size -->
+        <h2 style="background-color: #e0f2fe; font-size: 15px; color: #0369a1; padding: 6px 12px; border-radius: 4px; display: inline-block; margin: 5px 0;">
+            Nike Air Zoom Runner
+        </h2>
+        
+        <div class="price">₹4,999</div>
+        <button class="buy-btn">Add to Cart</button>
+    </div>
+</body>
+</html>

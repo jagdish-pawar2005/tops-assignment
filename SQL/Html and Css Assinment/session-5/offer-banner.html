@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Style Offer Banner</title>
+    
+    <!-- TASK 2: Internal CSS to configure custom fonts, color schemes, and banner alignments -->
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #fafafa;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        .banner-container {
+            width: 100%;
+            max-width: 800px;
+            background: linear-gradient(90deg, #ff3f6c, #ff6b8b); /* Myntra Brand Pink Gradient */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 63, 108, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            color: #ffffff;
+        }
+        .banner-text-content {
+            flex: 1.5;
+        }
+        .banner-text-content h2 {
+            font-family: 'Outfit', 'Montserrat', sans-serif; /* Custom font family */
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffff00; /* Custom text color for highlight */
+        }
+        .banner-text-content p {
+            font-size: 18px;
+            margin: 0;
+            font-weight: 500;
+            opacity: 0.95;
+            color: #ffffff; /* Custom white color for description */
+        }
+        .banner-action {
+            flex: 1;
+            text-align: right;
+        }
+        .btn-shop {
+            background-color: #ffffff;
+            color: #ff3f6c;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn-shop:hover {
+            background-color: #f3f3f3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <div class="banner-text-content">
+            <h2>End of Reason Sale</h2>
+            <p>50% - 80% OFF on Top Fashion Brands + Free Shipping</p>
+        </div>
+        <div class="banner-action">
+            <button class="btn-shop">Shop Now</button>
+        </div>
+    </div>
+</body>
+</html>
